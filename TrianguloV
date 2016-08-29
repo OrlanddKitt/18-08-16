@@ -65,6 +65,8 @@ main()
 }
 void gotoxy(short x, short y)
 {
-	COORD pos={x,y};
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE);COORD);
+COORD pos={x,y};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
+
+// Covarrubias Romero Orlando Esteban//Sánchez Martínez Jonathan//
