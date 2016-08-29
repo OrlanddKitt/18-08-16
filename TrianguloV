@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <conio.h>
+#include <dos.h>
+#include <windows.h>
+
+void gotoxy (short x, short y);
+main()
+{
+      system ("color 1b");
+      int i, n, fila, col, t=30;
+      printf("Tamano de la piramide no mayor a 20: ");
+      scanf("%d",&n);
+      system("cls");
+      printf("\n\n\n" );
+      //rutina para dibujar la pirámide//
+      for (fila=n; fila>=0; fila--)
+      {
+          for (col=1;col<=n-fila+25;col++)
+          {
+              printf(" ");
+              }
+          for(col=0;col<=2*fila;col++)
+          {
+                                        printf("*");
+                                        Sleep(t);
+                                        }
+                                        printf("*");
+                                        printf("\n");
+                                        }
+     //rutina para dibujar el cuadro//
+     for(i=1; i<=78; i++)
+     {
+     	gotoxy(i,0);
+     	printf("*");
+     	Sleep(t);
+    //delay (10)
+	 }
+	 for (i=0; i<=24; i++)
+	 {
+	 	gotoxy(78,i);
+	 	printf("*");
+	 	Sleep(t);
+	//delay(20)
+	 }
+	 for(i=78; i>=1; i--)
+	 {
+	 	gotoxy(i,24);
+	 	printf("*");
+	 	Sleep(t);
+    //delay(10)
+	 }
+	 for(i=24; i>=1; i--)
+	 {
+	 	gotoxy(0,i);
+	 	printf("*");
+	 	Sleep(t);
+	//delay(20)
+	 }
+	 printf(" ");
+	 printf("\n\n");
+	 gotoxy(15,10);
+	 system("PAUSE");
+}
+void gotoxy(short x, short y)
+{
+	COORD pos={x,y};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE);COORD);
+}
